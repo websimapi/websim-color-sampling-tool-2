@@ -1,0 +1,180 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top */
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #555;
+}
+
+.input-area {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-area input[type="file"] {
+    display: none; /* Hide the default file input */
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.image-container {
+    position: relative; /* Needed for canvas overlay */
+    margin-bottom: 20px;
+    text-align: center; /* Center canvas */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+#imageCanvas {
+    max-width: 100%; /* Ensure canvas doesn't exceed container width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below inline elements */
+    margin: 0 auto; /* Center canvas */
+    cursor: default; /* Default cursor */
+}
+
+.eyedropper-active #imageCanvas {
+    cursor: crosshair; /* Crosshair cursor when eyedropper is active */
+}
+
+.controls {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#eyedropperToggle {
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background-color: #28a745;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+#eyedropperToggle:hover {
+    background-color: #218838;
+}
+
+#eyedropperStatus {
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+#palette {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.color-entry {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    gap: 15px; /* Space between color block and values */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.color-block {
+    width: 50px;
+    height: 50px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.color-values {
+    flex-grow: 1; /* Allow values area to take up space */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.value-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap; /* Allow wrapping for long values */
+}
+
+.value-line span {
+    font-weight: bold;
+    width: 50px; /* Fixed width for labels */
+    flex-shrink: 0;
+}
+
+.value-line code {
+    background-color: #f8f9fa;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-family: monospace;
+    word-break: break-all; /* Break long words */
+    flex-grow: 1; /* Allow code block to grow */
+}
+
+.copy-button, .remove-button {
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.copy-button {
+    background-color: #6c757d;
+    color: white;
+}
+
+.copy-button:hover {
+    background-color: #5a6268;
+}
+
+.remove-button {
+    background-color: #dc3545;
+    color: white;
+    margin-left: auto; /* Push remove button to the right */
+}
+
+.remove-button:hover {
+    background-color: #c82333;
+}
+
+#palette p {
+    text-align: center;
+    color: #777;
+}
+
